@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capacitación Comercial · Santiago · ESBA Pilar</title>
+<style>
+:root{
+  --bg:#f5f5f7;--surface:#fff;--s2:#f5f5f7;--s3:#e8e8ed;
+  --t1:#1d1d1f;--t2:#6e6e73;--t3:#86868b;
+  --sep:rgba(0,0,0,.08);--sep2:rgba(0,0,0,.13);
+  --ind:#4f46e5;--ind-lt:#eef2ff;--ind-d:#3730a3;
+  --blue:#0071e3;--blue-lt:#e8f2fd;
+  --green:#34c759;--green-lt:#e3f9e8;
+  --red:#ff3b30;--red-lt:#fff0ef;
+  --orange:#ff9f0a;--orange-lt:#fff6e5;
+  --purple:#bf5af2;--purple-lt:#f5eeff;
+  --teal:#32ade6;--teal-lt:#e5f4fd;
+  --wa:#25d366;--wa-lt:#e8fef1;
+  --hs:#ff7a59;--hs-lt:#fff3ef;
+  --r12:12px;--r16:16px;--r20:20px;
+  --sh:0 2px 8px rgba(0,0,0,.06),0 0 0 .5px rgba(0,0,0,.04);
+  --sh-md:0 4px 20px rgba(0,0,0,.10),0 0 0 .5px rgba(0,0,0,.04);
+  color-scheme:light;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',Arial,sans-serif;font-size:14px;-webkit-font-smoothing:antialiased;}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,#4f46e5 0%,#7c3aed 50%,#6d28d9 100%);padding:20px 28px 0;position:sticky;top:0;z-index:200;}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.hdr-brand{display:flex;align-items:center;gap:14px;}
+.hdr-avatar{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;color:#fff;}
+.hdr-name{font-size:1rem;font-weight:700;color:#fff;}
+.hdr-sub{font-size:.7rem;color:rgba(255,255,255,.75);margin-top:2px;}
+.hdr-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;padding:5px 14px;border-radius:20px;font-size:.67rem;font-weight:700;white-space:nowrap;}
+.prog-wrap{margin-bottom:14px;}
+.prog-label{display:flex;justify-content:space-between;margin-bottom:5px;}
+.prog-text{font-size:.67rem;color:rgba(255,255,255,.75);font-weight:600;}
+.prog-bar{height:5px;background:rgba(255,255,255,.2);border-radius:3px;overflow:hidden;}
+.prog-fill{height:5px;background:#fff;border-radius:3px;transition:width .5s ease;width:0%;}
+.seg-wrap{display:flex;gap:1px;overflow-x:auto;padding-bottom:0;}
+.seg-wrap::-webkit-scrollbar{display:none;}
+.seg-btn{background:transparent;border:none;border-radius:var(--r12) var(--r12) 0 0;padding:9px 16px;font-size:.76rem;font-weight:600;color:rgba(255,255,255,.65);cursor:pointer;white-space:nowrap;transition:all .15s;font-family:inherit;border-bottom:3px solid transparent;}
+.seg-btn:hover{color:rgba(255,255,255,.9);background:rgba(255,255,255,.08);}
+.seg-btn.active{color:#fff;background:rgba(255,255,255,.12);border-bottom-color:#fff;}
+
+/* CONFIG BANNER */
+.cfg-banner{background:linear-gradient(135deg,#fef3c7,#fef9c3);border:1.5px dashed #f59e0b;border-radius:var(--r16);padding:16px 20px;margin-bottom:20px;display:flex;align-items:center;gap:14px;}
+.cfg-icon{font-size:1.6rem;flex-shrink:0;}
+.cfg-title{font-size:.82rem;font-weight:700;color:#92400e;}
+.cfg-sub{font-size:.69rem;color:#a05800;margin-top:2px;line-height:1.5;}
+.cfg-tag{display:inline-block;background:#f59e0b;color:#fff;font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:4px;margin-left:6px;vertical-align:middle;}
+
+/* LAYOUT */
+.wrap{max-width:980px;margin:0 auto;padding:24px 20px 48px;}
+.section{display:none;}.section.active{display:block;}
+
+/* MINI CARDS */
+.mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;}
+.mini-card{background:var(--surface);border-radius:var(--r12);padding:14px 16px;box-shadow:var(--sh);}
+.mini-lbl{font-size:.6rem;text-transform:uppercase;letter-spacing:.07em;color:var(--t3);font-weight:600;margin-bottom:6px;}
+.mini-val{font-size:1.4rem;font-weight:700;color:var(--t1);line-height:1;}
+.mini-sub{font-size:.65rem;color:var(--t3);margin-top:4px;}
+
+/* CARDS */
+.card{background:var(--surface);border-radius:var(--r16);padding:20px;box-shadow:var(--sh);margin-bottom:14px;}
+.card-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+.card-title{font-size:.85rem;font-weight:700;color:var(--t1);}
+.card-note{font-size:.67rem;color:var(--t3);}
+.card-2col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+
+/* SECTION HEADERS */
+.sec-hdr{padding:18px 22px;border-radius:var(--r16);margin-bottom:18px;display:flex;align-items:center;gap:14px;}
+.sh-dia  {background:linear-gradient(135deg,var(--ind-lt),#f0eeff);border-left:4px solid var(--ind);}
+.sh-prod {background:linear-gradient(135deg,var(--blue-lt),#f0f7ff);border-left:4px solid var(--blue);}
+.sh-wa   {background:linear-gradient(135deg,var(--wa-lt),#f0fff8);border-left:4px solid var(--wa);}
+.sh-hs   {background:linear-gradient(135deg,var(--hs-lt),#fff8f5);border-left:4px solid var(--hs);}
+.sh-obj  {background:linear-gradient(135deg,var(--orange-lt),#fffaf0);border-left:4px solid var(--orange);}
+.sh-rend {background:linear-gradient(135deg,var(--purple-lt),#faf5ff);border-left:4px solid var(--purple);}
+.sec-icon{font-size:1.8rem;flex-shrink:0;}
+.sec-title{font-size:.95rem;font-weight:700;color:var(--t1);}
+.sec-sub{font-size:.71rem;color:var(--t2);margin-top:2px;}
+
+/* CHECKLIST */
+.chk-group-lbl{font-size:.67rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin:18px 0 8px;}
+.chk-item{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:var(--r12);background:var(--s2);margin-bottom:7px;cursor:pointer;transition:all .15s;user-select:none;}
+.chk-item:hover{background:var(--s3);}
+.chk-item.done{opacity:.55;}
+.chk-item.done .chk-text{text-decoration:line-through;color:var(--t3);}
+.chk-box{width:22px;height:22px;border-radius:7px;border:2px solid var(--sep2);background:var(--surface);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s;margin-top:1px;}
+.chk-item.done .chk-box{background:var(--green);border-color:var(--green);}
+.chk-tick{display:none;color:#fff;font-size:.75rem;font-weight:800;}
+.chk-item.done .chk-tick{display:block;}
+.chk-text{font-size:.82rem;font-weight:600;color:var(--t1);line-height:1.4;}
+.chk-sub{font-size:.69rem;color:var(--t3);margin-top:2px;}
+.chk-priority{font-size:.58rem;padding:2px 7px;border-radius:5px;font-weight:700;white-space:nowrap;margin-left:auto;flex-shrink:0;}
+.cp-r{background:var(--red-lt);color:var(--red);}
+.cp-o{background:var(--orange-lt);color:#a05800;}
+.cp-g{background:var(--green-lt);color:#1a7a30;}
+
+/* PRODUCT CARDS */
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px;}
+.prod-card{background:var(--surface);border-radius:var(--r16);padding:20px;box-shadow:var(--sh);border-top:4px solid transparent;}
+.pc-bach{border-top-color:var(--green);}
+.pc-ucas{border-top-color:var(--purple);}
+.pc-cis {border-top-color:var(--orange);}
+.prod-emoji{font-size:1.6rem;margin-bottom:8px;}
+.prod-name{font-size:.88rem;font-weight:800;color:var(--t1);margin-bottom:4px;}
+.prod-tag{display:inline-block;font-size:.6rem;font-weight:700;padding:2px 8px;border-radius:5px;margin-bottom:10px;}
+.pt-g{background:var(--green-lt);color:#1a7a30;}
+.pt-p{background:var(--purple-lt);color:#6b21a8;}
+.pt-o{background:var(--orange-lt);color:#a05800;}
+.prod-row{display:flex;justify-content:space-between;font-size:.72rem;color:var(--t2);margin-bottom:4px;}
+.prod-val{font-weight:700;color:var(--t1);}
+.prod-divider{border:none;border-top:1px solid var(--sep);margin:10px 0;}
+.prod-ideal{font-size:.69rem;color:var(--t2);line-height:1.5;}
+.prod-ideal strong{color:var(--t1);display:block;font-size:.67rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;}
+
+/* ROUTING */
+.route-card{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border-left:4px solid var(--blue);border-radius:var(--r16);padding:20px;margin-bottom:14px;}
+.route-title{font-size:.82rem;font-weight:700;color:#0369a1;margin-bottom:12px;}
+.route-row{display:flex;align-items:flex-start;gap:10px;font-size:.76rem;color:var(--t2);margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(3,105,161,.1);}
+.route-row:last-child{margin-bottom:0;border-bottom:none;padding-bottom:0;}
+.route-if{font-size:.66rem;font-weight:800;color:#0369a1;padding:2px 7px;background:#e0f2fe;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.route-arr{color:var(--blue);font-weight:800;flex-shrink:0;}
+.route-then{font-size:.74rem;color:var(--t1);font-weight:600;}
+
+/* SCRIPTS */
+.script-card{background:var(--surface);border-radius:var(--r16);padding:18px;box-shadow:var(--sh);margin-bottom:12px;}
+.script-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.script-tag{font-size:.65rem;font-weight:700;padding:3px 9px;border-radius:6px;}
+.st-g{background:var(--green-lt);color:#1a7a30;}
+.st-p{background:var(--purple-lt);color:#6b21a8;}
+.st-o{background:var(--orange-lt);color:#a05800;}
+.st-b{background:var(--blue-lt);color:#0369a1;}
+.st-t{background:var(--teal-lt);color:#0e7490;}
+.st-r{background:var(--red-lt);color:#b91c1c;}
+.st-ind{background:var(--ind-lt);color:#3730a3;}
+.script-title{font-size:.82rem;font-weight:700;color:var(--t1);}
+.copy-btn{background:var(--ind);color:#fff;border:none;border-radius:8px;padding:6px 13px;font-size:.67rem;font-weight:700;cursor:pointer;font-family:inherit;transition:all .15s;}
+.copy-btn:hover{background:var(--ind-d);}
+.copy-btn.ok{background:var(--green);}
+.script-body{background:var(--s2);border-radius:var(--r12);padding:14px;font-size:.76rem;line-height:1.65;color:var(--t1);white-space:pre-wrap;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif;}
+.script-note{font-size:.67rem;color:var(--t3);margin-top:8px;font-style:italic;}
+.scripts-seg{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;}
+.ss-btn{background:var(--surface);border:1.5px solid var(--sep2);border-radius:20px;padding:6px 16px;font-size:.72rem;font-weight:600;cursor:pointer;font-family:inherit;color:var(--t2);transition:all .12s;}
+.ss-btn.active{background:var(--ind);border-color:var(--ind);color:#fff;}
+
+/* HUBSPOT PIPELINE */
+.pipeline-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px;}
+.stage-card{background:var(--surface);border-radius:var(--r12);padding:14px;box-shadow:var(--sh);cursor:pointer;transition:all .15s;border-bottom:3px solid transparent;text-align:center;}
+.stage-card:hover{transform:translateY(-2px);box-shadow:var(--sh-md);}
+.stage-card.active{box-shadow:var(--sh-md);}
+.stage-emoji{font-size:1.5rem;margin-bottom:6px;}
+.stage-name{font-size:.74rem;font-weight:700;color:var(--t1);}
+.stage-detail{background:var(--surface);border-radius:var(--r16);padding:20px;box-shadow:var(--sh);display:none;margin-bottom:14px;}
+.stage-detail.active{display:block;}
+.sd-hdr{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.sd-title{font-size:.9rem;font-weight:700;color:var(--t1);}
+.sd-tip{background:var(--orange-lt);border-left:3px solid var(--orange);border-radius:var(--r12);padding:12px 14px;margin-bottom:14px;font-size:.74rem;color:#92400e;line-height:1.5;}
+.sd-tip strong{display:block;font-size:.67rem;text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px;color:#a05800;}
+.action-list{list-style:none;}
+.action-list li{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--sep);font-size:.76rem;color:var(--t2);line-height:1.45;}
+.action-list li:last-child{border-bottom:none;}
+.action-num{min-width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:800;color:#fff;flex-shrink:0;margin-top:1px;}
+.hs-routine{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.hs-block{background:var(--surface);border-radius:var(--r16);padding:18px;box-shadow:var(--sh);}
+.hs-block-hdr{display:flex;align-items:center;gap:8px;margin-bottom:12px;}
+.hs-block-ico{font-size:1.2rem;}
+.hs-block-title{font-size:.8rem;font-weight:700;color:var(--t1);}
+.hs-step{display:flex;gap:10px;margin-bottom:8px;font-size:.74rem;color:var(--t2);line-height:1.45;}
+.hs-step-n{min-width:20px;height:20px;border-radius:50%;background:var(--hs);color:#fff;font-size:.6rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+
+/* OBJECIONES */
+.obj-item{background:var(--surface);border-radius:var(--r16);box-shadow:var(--sh);margin-bottom:10px;overflow:hidden;}
+.obj-hdr{display:flex;align-items:center;gap:12px;padding:16px 20px;cursor:pointer;user-select:none;}
+.obj-hdr:hover{background:var(--s2);}
+.obj-ico{font-size:1.2rem;flex-shrink:0;}
+.obj-q{font-size:.82rem;font-weight:700;color:var(--t1);}
+.obj-arr{margin-left:auto;font-size:.75rem;color:var(--t3);transition:transform .2s;}
+.obj-item.open .obj-arr{transform:rotate(90deg);}
+.obj-body{display:none;padding:0 20px 18px;}
+.obj-item.open .obj-body{display:block;}
+.obj-strat{background:var(--orange-lt);border-radius:var(--r12);padding:12px 14px;font-size:.73rem;color:#92400e;line-height:1.55;margin-bottom:10px;}
+.obj-strat strong{display:block;font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;color:#a05800;}
+
+/* RENDIMIENTO */
+.estado-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:18px;}
+.estado-card{background:var(--surface);border-radius:var(--r16);padding:18px;box-shadow:var(--sh);}
+.est-lbl{font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:var(--t3);font-weight:700;margin-bottom:6px;}
+.est-inp{width:100%;border:none;outline:none;font-size:1.6rem;font-weight:800;color:var(--t1);background:transparent;font-family:inherit;padding:0;}
+.est-inp:focus{color:var(--ind);}
+.est-meta{font-size:.67rem;color:var(--t3);margin-top:4px;}
+.est-bar-wrap{height:4px;background:var(--sep);border-radius:2px;margin-top:8px;overflow:hidden;}
+.est-bar{height:4px;border-radius:2px;transition:width .5s ease;background:var(--green);}
+.est-pct{font-size:.65rem;font-weight:700;color:var(--green);margin-top:4px;}
+
+.sim-card{background:var(--surface);border-radius:var(--r16);padding:22px;box-shadow:var(--sh);margin-bottom:14px;}
+.sim-title{font-size:.88rem;font-weight:700;color:var(--t1);margin-bottom:16px;}
+.sim-slider-row{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.sim-lbl-col{width:130px;flex-shrink:0;}
+.sim-lbl{font-size:.72rem;font-weight:600;color:var(--t2);}
+.sim-val{font-size:.82rem;font-weight:800;color:var(--ind);}
+input[type=range]{-webkit-appearance:none;flex:1;height:5px;border-radius:3px;background:var(--s3);outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--ind);cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2);}
+.sim-result{background:var(--ind-lt);border-radius:var(--r12);padding:16px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center;}
+.sr-val{font-size:1.5rem;font-weight:800;color:var(--ind);}
+.sr-lbl{font-size:.62rem;color:var(--t3);margin-top:3px;}
+
+.lever-card{background:linear-gradient(135deg,var(--ind-lt),#f0eeff);border-radius:var(--r16);padding:20px;margin-bottom:14px;}
+.lever-title{font-size:.82rem;font-weight:700;color:var(--ind-d);margin-bottom:12px;}
+.lever-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px;}
+.lever-num{min-width:24px;height:24px;border-radius:50%;background:var(--ind);color:#fff;font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.lever-text{font-size:.76rem;color:var(--t1);line-height:1.5;}
+.lever-text strong{color:var(--ind-d);}
+
+.insight-card{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-left:4px solid var(--green);border-radius:var(--r16);padding:16px 20px;margin-bottom:14px;}
+.ic-title{font-size:.76rem;font-weight:800;color:#166534;margin-bottom:5px;}
+.ic-body{font-size:.73rem;color:#15803d;line-height:1.55;}
+
+/* TAGS / PILLS */
+.tag{display:inline-block;font-size:.6rem;font-weight:700;padding:2px 8px;border-radius:5px;}
+.tag-g{background:var(--green-lt);color:#1a7a30;}
+.tag-r{background:var(--red-lt);color:#b91c1c;}
+.tag-o{background:var(--orange-lt);color:#a05800;}
+.tag-p{background:var(--purple-lt);color:#6b21a8;}
+.tag-b{background:var(--blue-lt);color:#0369a1;}
+
+@media(max-width:700px){
+  .prod-grid,.mini-grid,.card-2col,.estado-grid,.hs-routine{grid-template-columns:1fr 1fr;}
+  .pipeline-grid{grid-template-columns:repeat(2,1fr);}
+  .sim-result{grid-template-columns:1fr 1fr;}
+  .wrap{padding:16px 12px 48px;}
+  .header{padding:16px 16px 0;}
+}
+@media(max-width:480px){
+  .prod-grid,.mini-grid,.estado-grid{grid-template-columns:1fr;}
+  .card-2col,.hs-routine{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="hdr-top">
+    <div class="hdr-brand">
+      <div class="hdr-avatar" id="avatarInitials">AC</div>
+      <div>
+        <div class="hdr-name" id="hdrName">Asesor Comercial</div>
+        <div class="hdr-sub" id="hdrSub">Capacitación · Ventas Educativas</div>
+      </div>
+    </div>
+    <div class="hdr-badge" id="hdrBadge">ESBA</div>
+  </div>
+  <div class="prog-wrap">
+    <div class="prog-label">
+      <span class="prog-text" id="progText">Progreso del día: 0 / 8</span>
+      <span class="prog-text" id="progPct">0%</span>
+    </div>
+    <div class="prog-bar"><div class="prog-fill" id="progFill"></div></div>
+  </div>
+  <div class="seg-wrap">
+    <button class="seg-btn active" onclick="showTab('dia',this)">☀️ Mi Día</button>
+    <button class="seg-btn" onclick="showTab('prod',this)">📚 Productos</button>
+    <button class="seg-btn" onclick="showTab('wa',this)">💬 Scripts</button>
+    <button class="seg-btn" onclick="showTab('hs',this)">🟠 HubSpot</button>
+    <button class="seg-btn" onclick="showTab('obj',this)">🛡️ Objeciones</button>
+    <button class="seg-btn" onclick="showTab('rend',this)">📊 Rendimiento</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ════════════════ TAB 1: MI DÍA ════════════════ -->
+<div class="section active" id="tab-dia">
+
+  <div class="sec-hdr sh-dia">
+    <div class="sec-icon">☀️</div>
+    <div>
+      <div class="sec-title">Rutina Diaria</div>
+      <div class="sec-sub">8 pasos para una jornada de ventas efectiva. Tachá cada tarea al completarla.</div>
+    </div>
+  </div>
+
+  <div class="mini-grid">
+    <div class="mini-card"><div class="mini-lbl">Completadas</div><div class="mini-val" id="miniDone">0</div><div class="mini-sub">de 8 tareas</div></div>
+    <div class="mini-card"><div class="mini-lbl">Meta mensual</div><div class="mini-val" id="miniMeta">—</div><div class="mini-sub" id="miniMetaSub">inscriptos</div></div>
+    <div class="mini-card"><div class="mini-lbl">Conversión objetivo</div><div class="mini-val">5%</div><div class="mini-sub">leads → inscriptos</div></div>
+    <div class="mini-card"><div class="mini-lbl">Regla de oro</div><div class="mini-val">5'</div><div class="mini-sub">respuesta máx.</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-hdr"><span class="card-title">🌅 Mañana (al iniciar)</span><span class="card-note">~20 min</span></div>
+    <div id="chk-manana"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-hdr"><span class="card-title">🌇 Tarde (antes de cerrar)</span><span class="card-note">~15 min</span></div>
+    <div id="chk-tarde"></div>
+  </div>
+
+  <div class="insight-card">
+    <div class="ic-title">⚡ Regla de los 5 minutos</div>
+    <div class="ic-body">Si un lead escribe y tardás más de 5 minutos en responder, la tasa de conversión cae a la mitad. El 80% de las ventas se pierden por velocidad de respuesta, no por precio. <strong>Activá notificaciones de WhatsApp y HubSpot.</strong></div>
+  </div>
+
+</div><!-- /dia -->
+
+<!-- ════════════════ TAB 2: PRODUCTOS ════════════════ -->
+<div class="section" id="tab-prod">
+
+  <div class="sec-hdr sh-prod">
+    <div class="sec-icon">📚</div>
+    <div>
+      <div class="sec-title">Oferta Educativa</div>
+      <div class="sec-sub">Conocé cada producto, el perfil ideal de alumno y cómo encaminarlo.</div>
+    </div>
+  </div>
+
+  <div class="prod-grid" id="prodGrid"></div>
+
+  <div class="route-card">
+    <div class="route-title">🔀 Guía de Enrutamiento — Si te dice esto, ofrecé esto</div>
+    <div id="routeRows"></div>
+  </div>
+
+</div><!-- /prod -->
+
+<!-- ════════════════ TAB 3: SCRIPTS WA ════════════════ -->
+<div class="section" id="tab-wa">
+
+  <div class="sec-hdr sh-wa">
+    <div class="sec-icon">💬</div>
+    <div>
+      <div class="sec-title">Scripts de WhatsApp</div>
+      <div class="sec-sub">Mensajes listos para copiar y enviar. Adaptá nombre, producto y horario.</div>
+    </div>
+  </div>
+
+  <div class="scripts-seg" id="scriptsSeg"></div>
+  <div id="scriptsContent"></div>
+
+</div><!-- /wa -->
+
+<!-- ════════════════ TAB 4: HUBSPOT ════════════════ -->
+<div class="section" id="tab-hs">
+
+  <div class="sec-hdr sh-hs">
+    <div class="sec-icon">🟠</div>
+    <div>
+      <div class="sec-title">Pipeline HubSpot</div>
+      <div class="sec-sub">Clic en cada etapa para ver las acciones y el consejo clave.</div>
+    </div>
+  </div>
+
+  <div class="pipeline-grid" id="pipelineGrid"></div>
+  <div id="stageDetail"></div>
+
+  <div class="hs-routine">
+    <div class="hs-block">
+      <div class="hs-block-hdr"><span class="hs-block-ico">🌅</span><span class="hs-block-title">Rutina HubSpot — Mañana</span></div>
+      <div class="hs-step"><div class="hs-step-n">1</div><div>Abrí HubSpot → <strong>Actividad</strong>. Revisá tareas del día vencidas o por vencer.</div></div>
+      <div class="hs-step"><div class="hs-step-n">2</div><div>Filtrá <strong>Leads Nuevos</strong>. A cada uno agregale nota inicial y creá tarea de seguimiento.</div></div>
+      <div class="hs-step"><div class="hs-step-n">3</div><div>Revisá <strong>Contactados / Interesados</strong>. ¿Alguno sin respuesta hace +24h? Mandá follow-up.</div></div>
+      <div class="hs-step"><div class="hs-step-n">4</div><div>Mové al estado correcto según la última interacción. El pipeline siempre tiene que estar limpio.</div></div>
+    </div>
+    <div class="hs-block">
+      <div class="hs-block-hdr"><span class="hs-block-ico">🌇</span><span class="hs-block-title">Rutina HubSpot — Tarde</span></div>
+      <div class="hs-step"><div class="hs-step-n">1</div><div>Cargá las notas de todas las conversaciones del día antes de cerrar.</div></div>
+      <div class="hs-step"><div class="hs-step-n">2</div><div>Creá <strong>recordatorios</strong> para mañana: cada interesado sin respuesta definitiva necesita un follow-up programado.</div></div>
+      <div class="hs-step"><div class="hs-step-n">3</div><div>Mové a <strong>Inscripto</strong> a todos los que cerraron hoy. Agregá nota con producto, cuotas, inicio.</div></div>
+      <div class="hs-step"><div class="hs-step-n">4</div><div>Los <strong>Perdidos</strong>: anotá el motivo real (precio, tiempo, decidió otra cosa). Son datos de mejora.</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hdr"><span class="card-title">📋 Reglas de higiene del CRM</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div style="background:var(--green-lt);border-radius:var(--r12);padding:12px;font-size:.73rem;color:#166534;line-height:1.5;"><strong style="display:block;margin-bottom:4px;">✅ Siempre hacé</strong>Cargá nota después de cada conversación. Usá el nombre del lead en la nota. Creá tarea antes de salir de cada contacto.</div>
+      <div style="background:var(--red-lt);border-radius:var(--r12);padding:12px;font-size:.73rem;color:#b91c1c;line-height:1.5;"><strong style="display:block;margin-bottom:4px;">❌ Nunca hagas</strong>Dejar un lead sin etapa. Cargar notas "después". Poner una fecha de seguimiento sin tarea creada en HubSpot.</div>
+    </div>
+  </div>
+
+</div><!-- /hs -->
+
+<!-- ════════════════ TAB 5: OBJECIONES ════════════════ -->
+<div class="section" id="tab-obj">
+
+  <div class="sec-hdr sh-obj">
+    <div class="sec-icon">🛡️</div>
+    <div>
+      <div class="sec-title">Manejo de Objeciones</div>
+      <div class="sec-sub">Cada objeción tiene una causa real distinta. Identificala antes de responder.</div>
+    </div>
+  </div>
+
+  <div id="objList"></div>
+
+</div><!-- /obj -->
+
+<!-- ════════════════ TAB 6: RENDIMIENTO ════════════════ -->
+<div class="section" id="tab-rend">
+
+  <div class="sec-hdr sh-rend">
+    <div class="sec-icon">📊</div>
+    <div>
+      <div class="sec-title">Mi Rendimiento</div>
+      <div class="sec-sub">Registrá el estado del mes y simulá tu potencial de conversión.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hdr"><span class="card-title">📅 Estado del Mes</span><span class="card-note">Ingresá los números reales</span></div>
+    <div class="estado-grid">
+      <div class="estado-card">
+        <div class="est-lbl">Leads recibidos</div>
+        <input class="est-inp" type="number" id="eLeads" placeholder="0" oninput="calcEstado()">
+        <div class="est-meta" id="eLeadsMeta">Objetivo: <span id="metaLeadsVal">—</span></div>
+        <div class="est-bar-wrap"><div class="est-bar" id="eLeadsBar" style="width:0%"></div></div>
+        <div class="est-pct" id="eLeadsPct"></div>
+      </div>
+      <div class="estado-card">
+        <div class="est-lbl">Inscriptos</div>
+        <input class="est-inp" type="number" id="eInsc" placeholder="0" oninput="calcEstado()">
+        <div class="est-meta" id="eInscMeta">Objetivo: <span id="metaInscVal">—</span></div>
+        <div class="est-bar-wrap"><div class="est-bar" id="eInscBar" style="width:0%"></div></div>
+        <div class="est-pct" id="eInscPct"></div>
+      </div>
+      <div class="estado-card">
+        <div class="est-lbl">Conversión real</div>
+        <div class="mini-val" id="eConvVal" style="font-size:1.6rem;font-weight:800;color:var(--ind);padding-top:4px;">—%</div>
+        <div class="est-meta">Objetivo: 5%+</div>
+        <div class="est-bar-wrap"><div class="est-bar" id="eConvBar" style="width:0%"></div></div>
+        <div class="est-pct" id="eConvPct"></div>
+      </div>
+    </div>
+    <div id="estadoMsg" style="font-size:.76rem;color:var(--t2);padding:10px 2px 0;display:none;"></div>
+  </div>
+
+  <div class="sim-card">
+    <div class="sim-title">🔮 Simulador de Potencial</div>
+    <div class="sim-slider-row">
+      <div class="sim-lbl-col"><div class="sim-lbl">Leads / mes</div><div class="sim-val" id="sLeadsVal">80</div></div>
+      <input type="range" id="sLeads" min="20" max="300" value="80" oninput="calcConv()">
+    </div>
+    <div class="sim-slider-row">
+      <div class="sim-lbl-col"><div class="sim-lbl">Tasa conversión</div><div class="sim-val" id="sConvVal">5%</div></div>
+      <input type="range" id="sConv" min="1" max="20" step="0.5" value="5" oninput="calcConv()">
+    </div>
+    <div class="sim-result" id="simResult">
+      <div><div class="sr-val" id="srInsc">4</div><div class="sr-lbl">Inscriptos/mes</div></div>
+      <div><div class="sr-val" id="srAnual">48</div><div class="sr-lbl">Proyección anual</div></div>
+      <div><div class="sr-val" id="srMeta">✓</div><div class="sr-lbl">vs. objetivo</div></div>
+    </div>
+  </div>
+
+  <div class="lever-card">
+    <div class="lever-title">🎯 Las 3 palancas de conversión</div>
+    <div class="lever-row"><div class="lever-num">1</div><div class="lever-text"><strong>Velocidad de respuesta</strong> — Respondé en menos de 5 minutos. Duplica la conversión respecto a responder en 1 hora.</div></div>
+    <div class="lever-row"><div class="lever-num">2</div><div class="lever-text"><strong>Seguimiento sistemático</strong> — El 80% de los cierres ocurre entre el 2° y 5° contacto. Sin HubSpot, perdés esos leads.</div></div>
+    <div class="lever-row"><div class="lever-num">3</div><div class="lever-text"><strong>Identificar la objeción real</strong> — "Lo tengo que pensar" casi nunca significa lo que dice. Preguntá: <em>"¿Qué es lo que más te frena?"</em></div></div>
+  </div>
+
+</div><!-- /rend -->
+
+</div><!-- /wrap -->
+
+<script>
+// ═══════════════════════════════════════════════════════════════════════
+//  ⚙️  CONFIGURACIÓN DE SUBSEDE  —  editá este bloque antes de distribuir
+// ═══════════════════════════════════════════════════════════════════════
+const CONFIG = {
+  subsede:       'ESBA Pilar',
+  asesor:        'Santiago Blanco',
+  metaInscMes:   10,    // Objetivo: 8–10 inscriptos / mes
+  metaLeadsMes:  100,   // ~100 leads / mes con inversión actual
+  ingresoBach:   186000,  // Ingreso promedio Bach por alumno (ARS)
+  ingresoUcasal: 250000,  // Ingreso promedio UCASAL por alumno (ARS)
+  ingresoCis:    85000,   // Ingreso promedio CIS por alumno (ARS)
+  cisComision:   35,      // 35% comisión CIS para ESBA Pilar
+};
+// ═══════════════════════════════════════════════════════════════════════
+
+// ──────────────────────────────────────────────
+//  APLICAR CONFIG AL HEADER
+// ──────────────────────────────────────────────
+(function applyConfig(){
+  const nombreAsesor = CONFIG.asesor && CONFIG.asesor !== '[NOMBRE ASESOR]' ? CONFIG.asesor : 'Asesor Comercial';
+  const nombreSub    = CONFIG.subsede && CONFIG.subsede !== '[NOMBRE SUBSEDE]' ? CONFIG.subsede : 'ESBA';
+  const iniciales    = nombreAsesor.split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();
+
+  document.getElementById('avatarInitials').textContent = iniciales;
+  document.getElementById('hdrName').textContent = nombreAsesor;
+  document.getElementById('hdrSub').textContent  = 'Asesor Comercial · ' + nombreSub;
+  document.getElementById('hdrBadge').textContent = nombreSub;
+
+  if(CONFIG.metaInscMes > 0){
+    document.getElementById('miniMeta').textContent = CONFIG.metaInscMes;
+    document.getElementById('miniMetaSub').textContent = 'inscriptos / mes';
+    document.getElementById('metaInscVal').textContent = CONFIG.metaInscMes;
+  }
+  if(CONFIG.metaLeadsMes > 0){
+    document.getElementById('metaLeadsVal').textContent = CONFIG.metaLeadsMes;
+  }
+})();
+
+// ──────────────────────────────────────────────
+//  NAVEGACIÓN DE TABS
+// ──────────────────────────────────────────────
+function showTab(id, btn){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.seg-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if(btn) btn.classList.add('active');
+}
+
+// ──────────────────────────────────────────────
+//  CHECKLIST DIARIA
+// ──────────────────────────────────────────────
+const CHECKLIST = {
+  manana:[
+    {t:'Revisá HubSpot — tareas del día',s:'Actualizá estados del pipeline antes de empezar a hablar con leads.',p:'r'},
+    {t:'Respondé todos los mensajes pendientes',s:'Leads de ayer sin respuesta primero. Regla: 0 mensajes sin atender al iniciar.',p:'r'},
+    {t:'Revisá leads nuevos del día anterior',s:'Creá tarea de seguimiento para cada lead nuevo en HubSpot.',p:'r'},
+    {t:'Revisá el objetivo del mes',s:'¿Cuántos inscriptos faltan? ¿Cuántos leads activos tenés hoy?',p:'o'},
+  ],
+  tarde:[
+    {t:'Cargá notas de todas las conversaciones del día',s:'Cada conversación = una nota en HubSpot antes de cerrar.',p:'r'},
+    {t:'Creá recordatorios para mañana',s:'Cada interesado sin respuesta definitiva necesita un follow-up programado.',p:'r'},
+    {t:'Revisá leads "Interesados" sin avance',s:'¿Alguno lleva +48h sin mover? Mandale el follow-up de reactivación.',p:'o'},
+    {t:'Actualizá el estado del mes en Rendimiento',s:'5 minutos de registro hoy = datos reales para mejorar mañana.',p:'g'},
+  ]
+};
+
+let checkState = {};
+
+function renderChecklists(){
+  ['manana','tarde'].forEach(grp=>{
+    const cont = document.getElementById('chk-'+grp);
+    cont.innerHTML = '';
+    CHECKLIST[grp].forEach((item,i)=>{
+      const key = grp+'_'+i;
+      const done = checkState[key];
+      const div = document.createElement('div');
+      div.className = 'chk-item'+(done?' done':'');
+      div.onclick = ()=>{checkState[key]=!checkState[key];renderChecklists();updateProgress();};
+      const pClass = item.p==='r'?'cp-r':item.p==='o'?'cp-o':'cp-g';
+      const pLabel = item.p==='r'?'Prioritario':item.p==='o'?'Importante':'Hábito';
+      div.innerHTML=`
+        <div class="chk-box"><span class="chk-tick">✓</span></div>
+        <div style="flex:1">
+          <div class="chk-text">${item.t}</div>
+          <div class="chk-sub">${item.s}</div>
+        </div>
+        <span class="chk-priority ${pClass}">${pLabel}</span>`;
+      cont.appendChild(div);
+    });
+  });
+}
+
+function updateProgress(){
+  const total = CHECKLIST.manana.length + CHECKLIST.tarde.length;
+  const done  = Object.values(checkState).filter(Boolean).length;
+  const pct   = Math.round(done/total*100);
+  document.getElementById('progFill').style.width = pct+'%';
+  document.getElementById('progText').textContent  = `Progreso del día: ${done} / ${total}`;
+  document.getElementById('progPct').textContent   = pct+'%';
+  document.getElementById('miniDone').textContent  = done;
+}
+
+// ──────────────────────────────────────────────
+//  PRODUCTOS
+// ──────────────────────────────────────────────
+const PRODUCTS = [
+  {
+    key:'bach',cls:'pc-bach',emoji:'🎓',name:'Bachillerato Acelerado',tag:'pt-g',tagTxt:'Bach · Florida',
+    desc:'Para adultos sin secundaria completa. Modalidad a distancia con tutorías.',
+    rows:[
+      {l:'Duración',v:'12 meses (ritmo propio)'},
+      {l:'Modalidad',v:'100% a distancia'},
+      {l:'Certificación',v:'Título secundario oficial'},
+    ],
+    comision: CONFIG.ingresoBach > 0 ? ('~$'+CONFIG.ingresoBach.toLocaleString('es-AR')+' / alumno') : 'Consultá con tu responsable',
+    ideal:'<strong>Perfil ideal de alumno</strong>Adultos 25–50 años. Necesitan el título para un trabajo o ascenso. Situación económica media-baja. Pregunta clave: <em>"¿Terminaste la secundaria?"</em>',
+  },
+  {
+    key:'ucas',cls:'pc-ucas',emoji:'🏛️',name:'Carreras Universitarias',tag:'pt-p',tagTxt:'UCASAL · A distancia',
+    desc:'Universidad a distancia con título oficial. Opciones de negocios, sistemas, educación y más.',
+    rows:[
+      {l:'Duración',v:'3–5 años según carrera'},
+      {l:'Modalidad',v:'100% virtual'},
+      {l:'Certificación',v:'Título universitario oficial'},
+    ],
+    comision: CONFIG.ingresoUcasal > 0 ? ('~$'+CONFIG.ingresoUcasal.toLocaleString('es-AR')+' / alumno') : 'Consultá con tu responsable',
+    ideal:'<strong>Perfil ideal de alumno</strong>25–45 años con secundaria completa. Trabajo en relación de dependencia. Quiere avanzar profesionalmente sin dejar de trabajar. Preguntas: <em>"¿Terminaste el secundario?" / "¿Pensaste en estudiar una carrera?"</em>',
+  },
+  {
+    key:'cis',cls:'pc-cis',emoji:'💡',name:'Carreras Terciarias',tag:'pt-o',tagTxt:'CIS / Barrio Norte',
+    desc:'Tecnicaturas y carreras terciarias con salida laboral rápida. Duración corta, título oficial.',
+    rows:[
+      {l:'Duración',v:'2–3 años'},
+      {l:'Modalidad',v:'Semi-presencial / virtual'},
+      {l:'Comisión sede',v: CONFIG.cisComision > 0 ? CONFIG.cisComision+'% sobre cuota' : 'Ver acuerdo subsede'},
+    ],
+    comision: CONFIG.ingresoCis > 0 ? ('~$'+CONFIG.ingresoCis.toLocaleString('es-AR')+' / alumno') : 'Consultá con tu responsable',
+    ideal:'<strong>Perfil ideal de alumno</strong>18–35 años. Con o sin secundaria según carrera. Busca una salida laboral concreta en 2 años. Preguntas: <em>"¿Qué área te interesa?"</em> / <em>"¿Buscás algo más corto que una carrera universitaria?"</em>',
+  }
+];
+
+function renderProducts(){
+  const grid = document.getElementById('prodGrid');
+  grid.innerHTML = PRODUCTS.map(p=>`
+    <div class="prod-card ${p.cls}">
+      <div class="prod-emoji">${p.emoji}</div>
+      <div class="prod-name">${p.name}</div>
+      <span class="prod-tag ${p.tag}">${p.tagTxt}</span>
+      <p style="font-size:.72rem;color:var(--t2);margin-bottom:10px;line-height:1.45">${p.desc}</p>
+      ${p.rows.map(r=>`<div class="prod-row"><span>${r.l}</span><span class="prod-val">${r.v}</span></div>`).join('')}
+      <div class="prod-row"><span>Ingreso aprox.</span><span class="prod-val">${p.comision}</span></div>
+      <hr class="prod-divider">
+      <div class="prod-ideal">${p.ideal}</div>
+    </div>`).join('');
+
+  const routeData = [
+    {if_:'Tiene +25 años, no terminó el secundario',arr:'→',then:'Bachillerato Acelerado primero. Si avanza, ofrecé UCASAL como upgrade.'},
+    {if_:'Tiene secundario, quiere crecer laboralmente',arr:'→',then:'UCASAL. Enfocate en flexibilidad horaria y reconocimiento del título.'},
+    {if_:'Quiere algo rápido con salida laboral concreta',arr:'→',then:'Terciaria CIS. Resaltá 2 años y salida laboral específica.'},
+    {if_:'No sabe qué quiere estudiar',arr:'→',then:'Hacé preguntas de situación: trabajo actual, qué le interesa. Luego encaminá.'},
+    {if_:'Tiene secundario INCOMPLETO y quiere una carrera',arr:'→',then:'Bachillerato primero (obligatorio). Luego presentá UCASAL/CIS como paso siguiente.'},
+    {if_:'"¿Qué carreras tienen?"',arr:'→',then:'Preguntá primero: "¿Tenés el secundario completo?" Eso define el punto de partida.'},
+  ];
+  document.getElementById('routeRows').innerHTML = routeData.map(r=>`
+    <div class="route-row">
+      <span class="route-if">${r.if_}</span>
+      <span class="route-arr">${r.arr}</span>
+      <span class="route-then">${r.then}</span>
+    </div>`).join('');
+}
+
+// ──────────────────────────────────────────────
+//  SCRIPTS WHATSAPP
+// ──────────────────────────────────────────────
+const SCRIPTS_DATA = {
+  'primer-bach':{tag:'st-g',tagTxt:'Primer contacto · Bach',title:'Bachillerato — Primer mensaje',
+    body:`Hola [Nombre]! Soy [tu nombre] de ESBA 😊
+
+Vi que te interesó el Bachillerato Acelerado para adultos.
+
+Quería contarte que es 100% a distancia, podés avanzar a tu ritmo desde tu casa, y obtenés el título secundario oficial en 12 meses.
+
+¿Tenés un momento para que te cuente un poco más cómo funciona?`,note:'Enviá dentro de los primeros 5 minutos de recibir el lead.'},
+
+  'primer-ucas':{tag:'st-p',tagTxt:'Primer contacto · UCASAL',title:'UCASAL — Primer mensaje',
+    body:`Hola [Nombre]! Soy [tu nombre] de ESBA 👋
+
+Te escribo por tu consulta sobre las carreras universitarias a distancia de UCASAL.
+
+Tenemos más de 15 carreras, se cursan 100% online y el título es oficial. Ideal para personas que trabajan y quieren seguir creciendo.
+
+¿Me contás en qué área te interesa formarte? Así te cuento las opciones que tenemos.`,note:'Si no responde en 24h, usá el follow-up correspondiente.'},
+
+  'primer-cis':{tag:'st-o',tagTxt:'Primer contacto · CIS',title:'Tecnicaturas CIS — Primer mensaje',
+    body:`Hola [Nombre]! Soy [tu nombre] de ESBA 😊
+
+Vi que preguntaste por las tecnicaturas. Tenemos varias opciones con salida laboral en 2 años, como Ciberseguridad, Analista de Sistemas, Gestión de Empresas y más.
+
+¿Me contás qué área te llama más la atención? Así te doy info de las que más te convienen.`,note:''},
+
+  'followup-24h':{tag:'st-b',tagTxt:'Follow-up · 24 hs',title:'Seguimiento — Sin respuesta a las 24 hs',
+    body:`Hola [Nombre]! Soy [tu nombre] de ESBA.
+
+Te escribí ayer por tu consulta y no tuve respuesta 😊 Quería ver si podía ayudarte con alguna información.
+
+¿Seguís evaluando la posibilidad de estudiar? Con gusto te cuento más sobre las opciones disponibles.`,note:'Breve, sin presión. El objetivo es que retome el diálogo.'},
+
+  'followup-48h':{tag:'st-b',tagTxt:'Follow-up · 48 hs',title:'Seguimiento — Sin respuesta a las 48 hs',
+    body:`Hola [Nombre]! Te mando un mensaje puntual 😊
+
+Tenés tiempo hasta el [fecha límite] para inscribirte con la cuota de este período. Después los valores se actualizan.
+
+Si tenés alguna duda o querés arrancar, avisame y lo resolvemos rápido.`,note:'Agregá una fecha real si hay período de inscripción activo.'},
+
+  'reactivacion':{tag:'st-t',tagTxt:'Reactivación · 10-15 días',title:'Reactivación — Lead frío',
+    body:`Hola [Nombre]! Espero que estés bien 👋
+
+Hace unos días hablamos por el tema de estudiar. Quería volver a contactarte porque estamos con inscripciones abiertas y hay pocas vacantes disponibles.
+
+¿Pudiste pensar en esa posibilidad? Si querés te cuento los próximos pasos, es muy sencillo.`,note:'Para leads que quedaron en silencio. No más de 2-3 intentos en total.'},
+
+  'info-trap':{tag:'st-ind',tagTxt:'Trampa info',title:'Cuando dice "mandame toda la info"',
+    body:`Claro que sí! Para mandarte la info más relevante, rápida pregunta:
+
+¿Tenés el secundario completo o incompleto?
+
+Así te mando lo que corresponde a tu situación 😊`,note:'Siempre respondé una pregunta. No mandes PDF sin antes saber si califica para el producto correcto.'},
+
+  'cierre':{tag:'st-g',tagTxt:'Cierre',title:'Script de cierre',
+    body:`[Nombre], entonces quedamos en que te interesa [producto].
+
+Para reservar tu lugar necesito:
+✅ Nombre completo y DNI
+✅ Número de cuotas que elegís
+✅ Forma de pago (transferencia / efectivo)
+
+¿Puedo ir juntando los datos? El proceso es muy simple y lo hacemos hoy mismo 😊`,note:'Después de este mensaje, si no responde en 2 horas, llamá por teléfono.'},
+
+  'post-inscripcion':{tag:'st-g',tagTxt:'Post inscripción',title:'Bienvenida post-inscripción',
+    body:`[Nombre]! Bienvenido/a a ESBA 🎉
+
+Ya estás inscripto/a en [producto]. Te paso la info que necesitás para arrancar:
+
+📌 Próximo paso: [detallar el primer paso concreto]
+📌 Plataforma: [link o instrucciones]
+📌 Si tenés dudas: escribime acá directamente
+
+¡Mucho éxito en esta nueva etapa! 💪`,note:'Enviá dentro de las 2 hs post-inscripción. Activa el vínculo y baja la cancelación temprana.'},
+};
+
+const SCRIPT_GROUPS = [
+  {key:'primer-bach',lbl:'🟢 1° Bach'},
+  {key:'primer-ucas',lbl:'🟣 1° UCASAL'},
+  {key:'primer-cis', lbl:'🟠 1° CIS'},
+  {key:'followup-24h',lbl:'📩 FU 24h'},
+  {key:'followup-48h',lbl:'📩 FU 48h'},
+  {key:'reactivacion',lbl:'🔄 Reactiv.'},
+  {key:'info-trap',  lbl:'🎯 "Mandame info"'},
+  {key:'cierre',     lbl:'✅ Cierre'},
+  {key:'post-inscripcion',lbl:'🎉 Post-inscr.'},
+];
+
+let activeScript = 'primer-bach';
+
+function renderScripts(){
+  const seg = document.getElementById('scriptsSeg');
+  seg.innerHTML = SCRIPT_GROUPS.map(g=>`
+    <button class="ss-btn${g.key===activeScript?' active':''}" onclick="switchScript('${g.key}',this)">${g.lbl}</button>`).join('');
+  renderScriptContent();
+}
+
+function switchScript(key, btn){
+  activeScript = key;
+  document.querySelectorAll('.ss-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  renderScriptContent();
+}
+
+function renderScriptContent(){
+  const s = SCRIPTS_DATA[activeScript];
+  document.getElementById('scriptsContent').innerHTML = `
+    <div class="script-card">
+      <div class="script-hdr">
+        <div>
+          <span class="script-tag ${s.tag}">${s.tagTxt}</span>
+          <div class="script-title" style="margin-top:6px">${s.title}</div>
+        </div>
+        <button class="copy-btn" onclick="copyScript(this)">Copiar</button>
+      </div>
+      <div class="script-body">${s.body}</div>
+      ${s.note?`<div class="script-note">💡 ${s.note}</div>`:''}
+    </div>`;
+}
+
+function copyScript(btn){
+  const body = btn.closest('.script-card').querySelector('.script-body');
+  const text = body.textContent.trim();
+  const ok = ()=>{btn.textContent='✓ Copiado';btn.classList.add('ok');setTimeout(()=>{btn.textContent='Copiar';btn.classList.remove('ok');},2000);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(ok).catch(()=>fallbackCopy(text,ok));
+  } else { fallbackCopy(text,ok); }
+}
+function fallbackCopy(text,cb){
+  const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.select();try{document.execCommand('copy');cb();}catch(e){}document.body.removeChild(ta);
+}
+
+// ──────────────────────────────────────────────
+//  PIPELINE HUBSPOT
+// ──────────────────────────────────────────────
+const STAGES = [
+  {n:'🆕 Lead Nuevo',col:'var(--blue)',
+   tip:'Un lead nuevo no trabajado es dinero a punto de perderse. El primer contacto en menos de 5 minutos puede triplicar la conversión.',
+   actions:['Verificá que el lead esté cargado en HubSpot con nombre, teléfono y fuente correcta.','Enviá el primer mensaje de WhatsApp dentro de los 5 minutos de recibir el lead.','Creá una nota con el contexto: de dónde viene, qué producto consultó.','Agendá tarea de seguimiento para en 24 hs si no responde.']},
+  {n:'📤 Contactado',col:'var(--orange)',
+   tip:'El lead vio tu mensaje pero no respondió. No lo presiones, pero tampoco lo abandones. El 40% responde después del 2° contacto.',
+   actions:['Esperá 24 hs. Si no hay respuesta, enviá el follow-up de 24 hs.','A las 48 hs sin respuesta: follow-up con urgencia suave (fecha límite).','Máximo 3 intentos de contacto. Si no responde, pasá a "Perdido" con nota "sin respuesta".','No mandes mensajes de audio ni PDFs pesados en esta etapa.']},
+  {n:'💬 Interesado',col:'var(--green)',
+   tip:'Ya respondió y mostró interés. Ahora el objetivo es avanzar al siguiente paso concreto, no seguir informando sin comprometerse.',
+   actions:['Identificá el producto correcto según su situación (secundario completo o no).','Presentá UNA sola opción. No abrumes con alternativas.','Invitalo a dar el siguiente paso: "¿Te parece si te cuento cómo es el proceso de inscripción?"','Cargá en HubSpot: producto de interés, objeción principal, próximo contacto agendado.']},
+  {n:'⚖️ En Evaluación',col:'var(--purple)',
+   tip:'"Lo tengo que pensar" significa que hay una objeción que no te dijo. Tu trabajo es descubrirla, no esperar.',
+   actions:['Preguntá: "¿Qué es lo que más te frena para arrancar?"','Según la objeción, usá el script correspondiente de la sección Objeciones.','Si la objeción es precio: ofrecer cuotas, descuentos vigentes o comparar con el costo de NO estudiar.','Agendá un seguimiento en 48–72 hs como máximo. No dejes leads "en evaluación" por más de una semana sin contacto.']},
+  {n:'✅ Inscripto',col:'var(--green)',
+   tip:'¡Cerrado! Ahora el objetivo es que no se arrepienta y que quede satisfecho para que refiera a otros.',
+   actions:['Enviá el mensaje de bienvenida post-inscripción dentro de las 2 hs.','Cargá en HubSpot: producto, importe abonado, fecha de inicio, cuotas.','En 7 días: check-in por WhatsApp ("¿Cómo te va con el acceso?").','Pedí referidos naturalmente: "¿Conocés a alguien más que pueda interesarle?"']},
+  {n:'❌ Perdido',col:'var(--red)',
+   tip:'Un lead perdido bien documentado vale dinero: te dice por qué perdiste y cómo mejorar el discurso.',
+   actions:['Cargá el motivo REAL en HubSpot (precio, tiempo, eligió otra institución, no era el momento, sin respuesta).','No borres el contacto. En 3–6 meses, un lead "perdido" puede estar listo para inscribirse.','Revisá mensualmente los perdidos de hace 90 días para reactivar.','Usá los datos para ajustar el discurso con los próximos leads.']},
+];
+
+let activeStage = null;
+
+function renderPipeline(){
+  const grid = document.getElementById('pipelineGrid');
+  grid.innerHTML = STAGES.map((s,i)=>`
+    <div class="stage-card" onclick="showStage(${i},this)" style="border-bottom-color:${s.col}">
+      <div class="stage-emoji">${s.n.split(' ')[0]}</div>
+      <div class="stage-name">${s.n.replace(/^[^\s]+\s/,'')}</div>
+    </div>`).join('');
+}
+
+function showStage(idx, el){
+  if(activeStage===idx){
+    activeStage=null;
+    document.querySelectorAll('.stage-card').forEach(c=>c.classList.remove('active'));
+    document.getElementById('stageDetail').innerHTML='';
+    return;
+  }
+  activeStage=idx;
+  document.querySelectorAll('.stage-card').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  const s=STAGES[idx];
+  document.getElementById('stageDetail').innerHTML=`
+    <div class="stage-detail active">
+      <div class="sd-hdr">
+        <div style="width:36px;height:36px;border-radius:10px;background:${s.col};display:flex;align-items:center;justify-content:font-size:1.2rem;color:#fff;justify-content:center;font-size:1.2rem;">${s.n.split(' ')[0]}</div>
+        <div class="sd-title">${s.n}</div>
+      </div>
+      <div class="sd-tip"><strong>💡 Consejo clave</strong>${s.tip}</div>
+      <ul class="action-list">
+        ${s.actions.map((a,i)=>`<li><div class="action-num" style="background:${s.col}">${i+1}</div><span>${a}</span></li>`).join('')}
+      </ul>
+    </div>`;
+}
+
+// ──────────────────────────────────────────────
+//  OBJECIONES
+// ──────────────────────────────────────────────
+const OBJECIONES = [
+  {q:'"Es muy caro"',ico:'💰',
+   strat:'Causa real: no ve el valor. No discutas precio, mostrá retorno. Comparar con lo cotidiano ayuda a dimensionar.',
+   body:`Entiendo! El valor es importante para cualquier decisión.
+
+Pensemos así: una cuota de [producto] equivale aproximadamente a [comparación accesible: ej. "un café por día" o "una salida semanal"].
+
+Lo que te lleva a obtener [beneficio concreto: título oficial / salida laboral / ascenso].
+
+¿Querés que veamos juntos las opciones de cuotas que tenemos? Hay formas de adaptarlo a tu presupuesto 😊`},
+
+  {q:'"Lo tengo que pensar"',ico:'🤔',
+   strat:'Esta respuesta casi siempre oculta otra objeción. Tu trabajo es descubrirla, no esperar.',
+   body:`¡Claro! Está muy bien tomarte el tiempo.
+
+Para ayudarte a pensar mejor, ¿me contás qué es lo que más te genera dudas?
+
+¿Es el precio, los tiempos, si vas a poder con el estudio...?
+
+Así puedo darte info más precisa y no mandarte cosas que no te sirven 😊`},
+
+  {q:'"No tengo tiempo"',ico:'⏰',
+   strat:'Causa real: miedo al compromiso. Mostrá concretamente cuánto tiempo requiere. La clave es que sea manejable.',
+   body:`Te entiendo, todos tenemos la agenda llena hoy en día.
+
+Por eso te cuento que [producto] está pensado exactamente para eso: para personas que trabajan o tienen familia y no tienen tiempo completo para estudiar.
+
+Son aproximadamente [tiempo semanal] a la semana, en los horarios que vos elijas.
+
+¿Qué parte de tu día tenés más disponible? Así te cuento cómo se adapta.`},
+
+  {q:'"Mandame toda la info"',ico:'📄',
+   strat:'No lo hagas. Si mandás todo sin filtrar, perdés la conversación. Respondé con UNA pregunta para filtrar el producto correcto.',
+   body:`¡Con gusto! Para mandarte la info más relevante y no llenarte de cosas que no te sirven, rápida pregunta:
+
+¿Tenés el secundario completo o incompleto?
+
+Así te mando exactamente lo que corresponde a tu situación 😊`},
+
+  {q:'"¿El título vale?"',ico:'🎓',
+   strat:'Duda sobre legitimidad. Respondé con datos concretos: número de resolución, reconocimiento nacional, ejemplos reales.',
+   body:`¡Excelente pregunta! El título es 100% oficial y reconocido a nivel nacional.
+
+[Bach]: Resolución [número] del Ministerio de Educación. Habilitación nacional.
+[UCASAL]: Universidad con 60 años de trayectoria, reconocida por el CONEAU.
+[CIS]: Título terciario habilitante para ejercicio profesional.
+
+¿Querés que te mande la documentación para que puedas verificarlo? 😊`},
+
+  {q:'"No soy bueno estudiando"',ico:'😟',
+   strat:'Miedo al fracaso basado en experiencias pasadas. Diferenciá la modalidad actual vs. el colegio tradicional.',
+   body:`Eso me lo dicen muchos y después se sorprenden de lo bien que les va 😊
+
+La modalidad a distancia es completamente diferente a como estudiábamos antes. No hay exámenes de sorpresa ni presión del grupo. Avanzás a tu propio ritmo, con tutores disponibles cuando tenés dudas.
+
+El 90% de las personas que pensaban lo mismo terminaron sin problema.
+
+¿Querés que te cuente cómo funciona exactamente para que lo veas con tus ojos?`},
+
+  {q:'"Ahora no puedo, más adelante"',ico:'📅',
+   strat:'Sin urgencia. Generá un motivo real para actuar ahora sin presión artificial.',
+   body:`¡Entendido! El momento tiene que ser el correcto para vos.
+
+Te comento que las inscripciones cierran el [fecha] y los precios se actualizan a partir de [mes]. Si arrancás este período, te ahorrás eso.
+
+¿Qué te generaría más comodidad para arrancar? A veces con una sola cosa que se acomoda, todo se hace más fácil 😊`},
+
+  {q:'"Estoy viendo otras opciones"',ico:'🔍',
+   strat:'Comparación competitiva. No hables mal de la competencia. Diferenciá concretamente en lo que importa al lead.',
+   body:`¡Perfecto! Está muy bien comparar antes de decidir.
+
+Para ayudarte en la decisión, ¿qué es lo más importante para vos: precio, flexibilidad horaria, salida laboral rápida, o el reconocimiento del título?
+
+Según lo que más te importe, puedo mostrarte por qué ESBA es la mejor opción para ese punto en particular 😊`},
+];
+
+function renderObjeciones(){
+  document.getElementById('objList').innerHTML = OBJECIONES.map((o,i)=>`
+    <div class="obj-item" id="obj${i}">
+      <div class="obj-hdr" onclick="toggleObj(${i})">
+        <span class="obj-ico">${o.ico}</span>
+        <span class="obj-q">${o.q}</span>
+        <span class="obj-arr">▶</span>
+      </div>
+      <div class="obj-body">
+        <div class="obj-strat"><strong>🧠 Estrategia</strong>${o.strat}</div>
+        <div class="script-card" style="margin-bottom:0">
+          <div class="script-hdr">
+            <span class="script-title">Script sugerido</span>
+            <button class="copy-btn" onclick="copyObjScript(this)">Copiar</button>
+          </div>
+          <div class="script-body">${o.body}</div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function toggleObj(i){
+  const el=document.getElementById('obj'+i);
+  const wasOpen=el.classList.contains('open');
+  document.querySelectorAll('.obj-item').forEach(e=>e.classList.remove('open'));
+  if(!wasOpen) el.classList.add('open');
+}
+
+function copyObjScript(btn){
+  const body=btn.closest('.script-card').querySelector('.script-body');
+  const text=body.textContent.trim();
+  const ok=()=>{btn.textContent='✓ Copiado';btn.classList.add('ok');setTimeout(()=>{btn.textContent='Copiar';btn.classList.remove('ok');},2000);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(ok).catch(()=>fallbackCopy(text,ok));}
+  else{fallbackCopy(text,ok);}
+}
+
+// ──────────────────────────────────────────────
+//  RENDIMIENTO
+// ──────────────────────────────────────────────
+function calcEstado(){
+  const leads  = parseInt(document.getElementById('eLeads').value)||0;
+  const insc   = parseInt(document.getElementById('eInsc').value)||0;
+  const metaI  = CONFIG.metaInscMes||10;
+  const metaL  = CONFIG.metaLeadsMes||100;
+  const conv   = leads>0 ? (insc/leads*100) : 0;
+
+  // Leads bar
+  const lpct = metaL>0?Math.min(leads/metaL*100,100):0;
+  document.getElementById('eLeadsBar').style.width=lpct+'%';
+  document.getElementById('eLeadsBar').style.background=lpct>=100?'var(--green)':lpct>=70?'var(--orange)':'var(--red)';
+  document.getElementById('eLeadsPct').textContent=metaL>0?Math.round(lpct)+'% del objetivo':'';
+
+  // Inscriptos bar
+  const ipct = Math.min(insc/metaI*100,100);
+  document.getElementById('eInscBar').style.width=ipct+'%';
+  document.getElementById('eInscBar').style.background=ipct>=100?'var(--green)':ipct>=70?'var(--orange)':'var(--red)';
+  document.getElementById('eInscPct').textContent=Math.round(ipct)+'% del objetivo';
+
+  // Conversión
+  document.getElementById('eConvVal').textContent=conv.toFixed(1)+'%';
+  const cpct=Math.min(conv/10*100,100);
+  document.getElementById('eConvBar').style.width=cpct+'%';
+  document.getElementById('eConvBar').style.background=conv>=5?'var(--green)':conv>=3?'var(--orange)':'var(--red)';
+  document.getElementById('eConvPct').textContent=conv>=5?'✓ Objetivo superado':conv>=3?'Cerca del objetivo':'Por debajo del objetivo';
+
+  const msgDiv=document.getElementById('estadoMsg');
+  if(leads>0){
+    msgDiv.style.display='block';
+    if(conv>=5&&insc>=metaI){msgDiv.innerHTML='🟢 <strong>Excelente mes.</strong> Superaste la meta de inscriptos y la tasa de conversión está en zona óptima.';}
+    else if(conv<3&&leads>0){msgDiv.innerHTML='🔴 <strong>Conversión baja.</strong> Revisá velocidad de respuesta y seguimiento. Con los mismos leads, podés duplicar resultados.';}
+    else if(insc<metaI&&conv>=5){msgDiv.innerHTML='🟡 <strong>Buena conversión</strong>, pero necesitás más leads. Hablá con tu responsable sobre aumentar la inversión en publicidad.';}
+    else{msgDiv.innerHTML='🟡 <strong>Progreso en curso.</strong> Mantené el seguimiento sistemático y los scripts al día.';}
+  } else { msgDiv.style.display='none'; }
+}
+
+function calcConv(){
+  const leads=parseInt(document.getElementById('sLeads').value)||80;
+  const conv=parseFloat(document.getElementById('sConv').value)||5;
+  document.getElementById('sLeadsVal').textContent=leads;
+  document.getElementById('sConvVal').textContent=conv+'%';
+  const insc=Math.round(leads*conv/100);
+  document.getElementById('srInsc').textContent=insc;
+  document.getElementById('srAnual').textContent=insc*12;
+  const meta=CONFIG.metaInscMes||10;
+  const vs=insc>=meta?'✅ Meta':'⚠️ '+(meta-insc)+' menos';
+  document.getElementById('srMeta').textContent=vs;
+  document.getElementById('srMeta').style.color=insc>=meta?'var(--green)':'var(--orange)';
+}
+
+// ──────────────────────────────────────────────
+//  INIT
+// ──────────────────────────────────────────────
+renderChecklists();
+updateProgress();
+renderProducts();
+renderScripts();
+renderPipeline();
+renderObjeciones();
+calcConv();
+calcEstado();
+</script>
+</body>
+</html>
