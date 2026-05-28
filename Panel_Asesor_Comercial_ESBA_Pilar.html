@@ -1009,14 +1009,18 @@ function processSheetData(data){
 
     if(!dateCell || dateCell.v == null) return;
 
-    // gviz devuelve fechas como "Date(2026,4,21)" (mes 0-based)
+    // gviz puede devolver fechas como "Date(2026,4,21)" (string), como número serial
+    // de Google Sheets (días desde 30/12/1899), o como string ISO
     let rowDate;
-    const dv = String(dateCell.v);
-    if(dv.startsWith('Date(')) {
+    const dv = dateCell.v;
+    if(typeof dv === 'string' && dv.startsWith('Date(')) {
       const parts = dv.replace('Date(','').replace(')','').split(',').map(Number);
       rowDate = new Date(parts[0], parts[1], parts[2]);
+    } else if(typeof dv === 'number') {
+      // Número serial: días desde 30/12/1899 → convertir a Unix timestamp
+      rowDate = new Date(Math.round((dv - 25569) * 86400000));
     } else {
-      rowDate = new Date(dv);
+      rowDate = new Date(String(dv));
     }
     if(!rowDate || isNaN(rowDate.getTime())) return;
     if(rowDate.getFullYear() !== curY || rowDate.getMonth() !== curM) return;
@@ -1069,43 +1073,23 @@ function fetchSheetData(){
   if(btn)    { btn.textContent = '⏳'; btn.disabled = true; }
   if(status) status.textContent = '⏳ Actualizando…';
 
-  // Eliminar script anterior
-  const old = document.getElementById('_gvizScript');
-  if(old) old.remove();
-
-  // Callback único para esta carga
-  const cbName = '_gvizCb' + Date.now();
-
-  const timer = setTimeout(() => {
-    delete window[cbName];
-    const s = document.getElementById('_gvizScript');
-    if(s) s.remove();
-    handleSheetError(new Error('Timeout'));
-  }, 10000);
-
-  window[cbName] = function(data){
-    clearTimeout(timer);
-    delete window[cbName];
-    const s = document.getElementById('_gvizScript');
-    if(s) s.remove();
-    try { processSheetData(data); }
-    catch(e) { handleSheetError(e); }
-  };
-
-  // JSONP: handler:cbName → funciona desde file:// y cualquier origen web
+  // Usar fetch() en lugar de JSONP — funciona desde GitHub Pages sin restricciones CSP
   const tab = encodeURIComponent(CONFIG.sheetTab || 'Inscripciones');
-  const url = `https://docs.google.com/spreadsheets/d/${CONFIG.sheetId}/gviz/tq`
-            + `?tqx=reqId:0;handler:${cbName}&sheet=${tab}`;
+  const url = `https://docs.google.com/spreadsheets/d/${CONFIG.sheetId}/gviz/tq?tqx=out:json&sheet=${tab}`;
 
-  const script  = document.createElement('script');
-  script.id     = '_gvizScript';
-  script.src    = url;
-  script.onerror = () => {
-    clearTimeout(timer);
-    delete window[cbName];
-    handleSheetError(new Error('Script load error — verificá que la planilla es pública'));
-  };
-  document.head.appendChild(script);
+  fetch(url)
+    .then(r => {
+      if(!r.ok) throw new Error('HTTP ' + r.status);
+      return r.text();
+    })
+    .then(txt => {
+      // Strip wrapper: /*O_o*/\ngoogle.visualization.Query.setResponse({...});
+      const json = txt.replace(/^[^{]*/, '').replace(/\);\s*$/, '');
+      const data = JSON.parse(json);
+      try { processSheetData(data); }
+      catch(e) { handleSheetError(e); }
+    })
+    .catch(e => handleSheetError(e));
 }
 
 // ──────────────────────────────────────────────
